@@ -6,15 +6,15 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: echo Hello
-  print_world:
+  print_me:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo Chisom 
+      - run: echo $mynameis 
 workflows:
   welcome:
     jobs:
       - print_hello
-      - print_world:
+      - print_me:
           requires:
             - print_hello
